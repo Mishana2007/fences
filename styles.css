@@ -1,0 +1,427 @@
+/* Подключение шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #5C4033;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #EDE0D4;
+}
+
+
+/* Заголовки – мощные, строгие */
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Основной текст – читаемый и легкий */
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Шапка */
+.header {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Логотип */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Десктопное меню */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #EDE0D4;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #FFC107;
+}
+
+/* Кнопка "Позвонить" */
+.call-btn {
+    padding: 10px 20px;
+    background-color: #FFC107;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.call-btn:hover {
+    background-color: #E6A500;
+}
+
+/* Бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: #EDE0D4;
+    transition: 0.3s;
+}
+
+/* Мобильное меню (по умолчанию скрыто) */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #EDE0D4;
+    font-size: 22px;
+    transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+    color: #FFC107;
+}
+
+/* Открытие меню */
+.mobile-menu.open {
+    transform: translateY(0);
+}
+
+/* Первый экран */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('11.png') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero p {
+    font-size: 22px;
+    margin: 20px 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.btn-primary {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #FFC107;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #E6A500;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+}
+
+
+/* Блок "Почему мы?" */
+.why-us {
+    text-align: center;
+    padding: 80px 50px;
+    background-color: #4A3325; /* Темный фон */
+    color: #EDE0D4;
+}
+
+.why-us h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Контейнер с блоками */
+.why-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Каждый блок */
+.why-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.why-item:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.why-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.why-item h3 {
+    font-size: 20px;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .why-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-item {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Блок "О нас" */
+.about-us {
+    position: relative;
+    padding: 100px 50px;
+    color: #EDE0D4;
+    text-align: center;
+}
+
+/* Фон с текстурой */
+.about-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('2.png') no-repeat center center/cover;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Контент */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+/* Преимущества */
+.about-advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.advantage {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.advantage:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Иконки */
+.icon-box {
+    flex: 0 0 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.icon-box img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Текст */
+.text-box {
+    text-align: left;
+    color: #F5E6CC;
+}
+
+.text-box h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .about-us {
+        padding: 80px 30px;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .advantage {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icon-box {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
